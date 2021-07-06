@@ -1,0 +1,29 @@
+# python_practice
+def bubble_sort(arr):
+    for i in range(0,len(arr)-1):
+        for j in range(0 , len(arr)-1-i):  #-i를 붙여서 맨 마지막 계산을 제외하면서 계산이 줄음
+            if arr[j] > arr[j+1]: 
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                #swapped = True
+        #if not swapped:
+        #   break
+        print(arr)
+
+array=[1,10,5,3,6,2,7,8,4,9]    
+bubble_sort(array)
+print(array)
+
+#for i in range(len(arr)-1,0,-1):
+#       for j in range(i):
+
+#최적화>마지막으로 앞뒤 자리 비교가 있었던 index를 기억해두면 다음 패스에서는 그 자리 전까지만 정def bubble_sort(arr):
+    # end = len(arr) - 1
+    # while end > 0:
+    #     last_swap = 0
+    #     for i in range(end):
+    #         if arr[i] > arr[i + 1]:
+    #             arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    #             last_swap = i
+    #     end = last_swap
+
+    # 참고) 여러 줄 주석은 ctrl+k+c

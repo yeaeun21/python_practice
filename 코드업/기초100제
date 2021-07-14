@@ -85,3 +85,7 @@ print('%X'% int(input()))
 #6029
 print('%o'%int(input(), 16))
 #6030
+print(ord(input())
+#6031
+print(chr(int(input())))
+*chr( )는 정수값->문자, ord( )는 문자->정수값 형태로 바꿔주는 서로 반대 방향으로 바꾸어 주는 기능을 한다.

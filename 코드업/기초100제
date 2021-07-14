@@ -33,6 +33,7 @@ print(b)
 #6013
 a = input()
 b = input()
+#
 print('{b}\n{a}'.format(b=b, a=a))
 #6014
 a = float(input())
@@ -89,3 +90,22 @@ print(ord(input())
 #6031
 print(chr(int(input())))
 *chr( )는 정수값->문자, ord( )는 문자->정수값 형태로 바꿔주는 서로 반대 방향으로 바꾸어 주는 기능을 한다.
+#6032
+print(-int(input()))
+#6033
+print(chr(ord(input())+1))
+#6034
+a, b = input().split()
+print(int(a) - int(b))
+#6035
+a,b=input().split()
+print(float(a)*float(b))
+#6036
+a,b=input().split()
+print(a*int(b))
+#6036(second)
+s = input().split()
+for i in range(int(s[1])):
+    print(s[0], end='')
+#6037
+

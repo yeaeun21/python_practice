@@ -1,0 +1,127 @@
+# python_practice
+
+#회문 판별
+# 언파는 요즘 문학에 빠져 있어요.
+# 지난 주에는 회문 (Palindrome)이 들어간 작품들을 보았죠.
+# “Madam, I’m Adam.” 처럼 회문은 앞으로 읽거나 뒤로 읽어도 똑같은 문장이예요.
+# 회문은 띄어쓰기나 문장 부호는 무시한다고 하네요.
+# 언파는 보다 많은 회문을 찾기 위해 회문 판독기를 만들고 있어요.
+# 여러분은 언파를 도와 회문을 판별하는 기능을 구현하세요.
+
+# 입력 인자는 문자열 컬렉션
+# 출력은 판별한 결과 컬렉션, 입력 요소가 회문일 때 True, 아닐 때 False
+# 입력: [“Madam, I’m Adam.”, “rotator”,”Hello”,”nurses run”]
+# 출력: [True, True, False, True]
+# 주의할 점: 낱말 사이에 있는 띄어쓰기나 문장 부호는 무시하며 대소문자를 구분하지 않습니다.
+
+def is_palindrom(text):
+    s=''.join(char for char in text if char.isalnum())
+    s=s.lower()
+    left=0
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+        return True
+def IsPalindromes(texts):
+    re=[]
+    for text in texts:
+        re.append(is_palindrom(text))
+    return re
+texts=["Madom, I'm Adam","rotator","Hello"]
+print(IsPalindromes(texts))
+
+
+ 
+#로마 숫자를 정수로 바꾸기
+요즘 민수는 로마 숫자에 빠져있어요.
+아라비아 숫자보다 뭔가 멋있다는 생각이 들어 일상에서 간단한 수는 로마 숫자로 표기하고 있어요.
+하지만 로마 숫자로 표기하면 매 번 수를 계산하는데 시간이 걸리네요.
+민수는 빠르게 아라비아 수로 변환할 필요성을 느꼈어요.
+여러분은 민수를 도와 로마 숫자로 표기한 내용을 아라비아 수로 
+변환하는 코드를 작성하세요.
+
+로마 숫자는 기호를 합산하여 수를 계산합니다.
+예를 들어 III는 3(1+1+1)이며 LV는 55(50+5)입니다.
+만약 작은 수가 큰 수보다 앞에 오면 큰 수에서 작은 수를 빼야 합니다.
+에를 들어 IV는 4(5-1)인 것이죠.
+
+입력: “MCMXCIV”
+출력: 1994
+설명: 1000(M)-100(C)+1000(M)-10(X)+100(C)-1(I)+5(V)=1994
+==============================================================================
+#이진탐색
+언휴는 도서관에서 책을 찾아주는 업무를 하고 있습니다. 
+일을 하면서 빠르게 검색하기 위해 책에 일련 번호를 부여하여 순차적으로 배치하였습니다.
+그리고 AI 로봇에게 빠른 검색을 할 수 있게 설정하였습니다.
+검색할 책 번호를 입력하면 전체 일련 번호의 중간 값과 비교합니다.
+같으면 해당 책을 갖고 오고 작으면 앞쪽에 찾고 크면 뒤쪽에서 찾습니다. 
+이것을 반복하면 빠르게 찾을 수 있네요.
+
+입력은 번호 순으로 정렬 상태의 컬렉션
+반환은 검색한 순서 컬렉션와 검색 여부
+입력: nums[2, 7, 11, 15, 22, 34, 37, 50, 120, 212, 223, 456], target = 223
+출력: [37,212,223], True
+===============================================================================
+#이중 반복문 방법으로 TwoSum을 해결한 예
+언휴는 숫자 놀이를 좋아합니다.
+이번에 숫자 블록을 가지고 노는 도구를 구입하였습니다.
+한쪽에 숫자 블록들이 순차적으로 올라옵니다.
+그리고 앞쪽에 하나의 숫자가 디스플레이에 나옵니다.
+두 개의 숫자 블록으로 디스플레이에 나오는 숫자를 만들어 보세요.
+두 개의 블록의 순서 인덱스(0부터 시작)를 누르면 디스플레이에 정답 여부가 나옵니다.
+
+입력은 정수 리스트와 맞춰야 할 숫자
+출력은 인덱스 리스트
+입력: nums = [2, 7, 11, 15], target = 9
+출력: [0,1]
+
+def solution(nums, target):
+  re=[]#re := 빈 리스트 생성  
+  for i in range(len(nums)):#반복 i 0 to nums의 길이 까지
+    for j in range(len(nums)):#반복 j 0 to nums의 길이까지
+      if (i!=j) and(nums[i] + nums[j] == target): #조건 (i is not equal j) and (nums[i]+nums[j] is equal target)
+        re.append(i)#re에 i 추가
+        re.append(j)#re에 j 추가
+        return re#re 반환
+  return re
+#동적 프로그래밍 방법으로 TwoSum을 해결한 예
+
+def dynamic_solution(nums,target):
+  kv ={} #빈 사전 개체 - 원래 nums에 있는 값이 어느 인덱스에 있는지 기억시킬 사전 개체
+  for index,value in enumerate(nums):
+    if value in kv: #이미 존재하는 값일 때
+      kv[value].append(index)
+    else: #처음 발견할 값일 때
+      kv[value] = [index]
+  nums2 = nums.copy() #현재 nums와 같은 원소로 구성한 nums2를 생성
+  nums2.sort() #정렬
+  
+  left, right = 0, len(nums)-1
+  while left<right: #left>=right 일 때는 원하는 값이 없음
+    s = nums2[left] + nums2[right]
+    if s < target: #합계가 작으면 left를 우측으로...
+
+# 두 개의 시간을 비교하는 코드
+import random
+import time
+
+nums=[]
+for i in range(1000000):
+  nums.append(random.randint(1,10000000))
+target = nums[900000] + nums[900001]
+print(target)
+start = time.time()
+re = solution(nums,target)
+end = time.time()
+print("2중 반복문:",end-start)
+
+start = time.time()
+re = dynamic_solution(nums,target)
+end = time.time()
+print("동적 프로그래밍 소요 시간:",end-start)
+============================================================================
+
+

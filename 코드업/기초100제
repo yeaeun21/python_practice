@@ -284,3 +284,83 @@ elif a=="D":
 else:
     print("what?")
 #6070
+a=int(input())
+if a//3==1:
+    print("spring")
+elif a//3==2:
+    print("summer")
+elif a//3==3:
+    print("fall")
+else:
+    print("winter")
+//6070(2)
+month = int(input())
+season = ''
+if(month in [12, 1, 2]):
+    season = 'winter'
+elif(month in [3, 4, 5]):
+    season = 'spring'
+elif(month in [6, 7, 8]):
+    season = 'summer'
+else:
+    season = 'fall'
+print(season)
+#6071
+while True:
+    a=int(input())
+    if a==0:
+        break
+    else: 
+        print(a)
+#6072
+a=int(input())
+
+while a>0:
+    print(a)
+    a-=1
+#6073
+a=int(input())
+
+while a>0:
+    a-=1
+    print(a)
+#6074
+c=ord(input())
+t=ord('a')
+while t<=c:
+    print(chr(t),end=" ")
+    t+=1
+#6075
+n=int(input())
+
+i=0
+while i<=n:
+    print(i)
+    i+=1
+
+#6076
+n=int(input())
+for i in range(n+1):
+    print(i)
+#6077
+n = int(input())
+s = 0
+for i in range(n + 1):
+    if(i % 2 == 0):
+        s += i
+print(s)
+#6078
+c = ''
+while(c != 'q'):
+    c = input()
+    print(c)
+#6079
+n = int(input())
+i = 0
+s = 0
+while(s < n):
+	i += 1
+	s += i
+print(i)
+
+    

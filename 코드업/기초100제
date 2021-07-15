@@ -362,5 +362,6 @@ while(s < n):
 	i += 1
 	s += i
 print(i)
+#6080
 
     

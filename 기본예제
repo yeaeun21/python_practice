@@ -1,0 +1,41 @@
+도형 별 넓이 구하기
+
+def area(n):
+    if n==1:
+        rad = int(input("원의 반지름 길이를 입력해주세요:"))
+        area = rad**2 * 3.1415
+        print("반지름 길이가 {}인 원의 넓이는 약 {:.2f}입니다.".format(rad,area))
+
+    elif n==2:
+        heigh = int(input("삼각형의 높이 길이를 입력해주세요:"))
+        leng = int(input("삼각형의 밑변 길이를 입력해주세요:"))
+        area=heigh*leng*1/2
+        print("높이가 {}이고 밑변이 {}인 삼각형의 넓이는 {}입니다.".format(heigh,leng,area))
+
+    elif n==3:
+        wid = int(input("직사각형 가로 길이를 입력해주세요:"))
+        leng = int(input("직사각형 세로 길이를 입력해주세요:"))
+        area=wid*leng
+        print("가로가 {}이고 세로가 {}인 직사각형의 넓이는 {}입니다.".format(wid,leng,area))
+
+    elif n==4:
+        leng = int(input("정사각형 한 변의 길이를 입력해주세요:"))
+        area=leng**2
+        print("한 변의 길이가 {}인 정사각형의 넓이는 {}입니다.".format(leng,area))
+
+
+
+
+
+print("==========도형목록==========\n"
+      "1.원\n"
+      "2.삼각형\n"
+      "3.직사각형\n"
+      "4.정사각형\n"
+      "===========================\n")
+area(int(input("도형 목록에서 넓이를 계산할 도형의 번호를 입력해주세요:")))
+
+
+
+
+

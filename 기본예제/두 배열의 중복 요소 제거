@@ -1,0 +1,23 @@
+반복문 두개쓰기
+*은 괄호제거
+def solution(a,b):
+    for i in b:
+        for j in b:
+                if i==j:
+                    a.remove(i)
+    return a
+
+print(*solution(['곰','김변수', '망고'],['망고', '김변수']))
+
+
+if로 바로 중복 찾기
+a와 b의 순서가 바뀌면 왜 두번째이후부터는 중복을 제거하지 못하는가?
+      ->a배열자체가 바뀐채로 for문이 돌기때문에 멈추기때문이다.
+
+def solution(a,b):
+    for i in b:
+        if i in a:
+            a.remove(i)
+    return a
+
+print(*solution(['곰','김변수', '망고'],['망고', '김변수']))

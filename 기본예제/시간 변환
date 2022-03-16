@@ -1,0 +1,15 @@
+time=int(input("초 단위의 시간을 입력하세요: "))
+
+day=time//86400
+hour=(time%86400)//3600
+minute=(time%3600)//60
+second=time%60
+
+if day!=0:
+    print(day,"일",end=' ')
+if hour!=0:
+    print(hour,"시간",end=' ')
+if min!=0:
+    print(minute,"분",end=' ')
+if second!=0:
+    print(second,"초")

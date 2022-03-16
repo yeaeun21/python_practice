@@ -1,3 +1,15 @@
+문제
+
+
+초 단위의 시간을 입력 받고, 일, 시, 분, 초로 시간을 계산하여 출력하는 코드를 작성해보세요.
+
+사용하지 않는 단위는 출력하지 않습니다 (ex. '3601'초를 입력하면 '1시간 0분 1초'가 아닌 '1시간 1초'로 출력)
+1일 = 86400초
+1시간 = 3600초
+1분 = 60초
+
+
+
 time=int(input("초 단위의 시간을 입력하세요: "))
 
 day=time//86400
@@ -6,10 +18,10 @@ minute=(time%3600)//60
 second=time%60
 
 if day!=0:
-    print(day,"일",end=' ')
+    print(f"{day}일",end=' ')
 if hour!=0:
-    print(hour,"시간",end=' ')
+    print(f"{hour}시간",end=' ')
 if min!=0:
-    print(minute,"분",end=' ')
+    print(f"{minute}분",end=' ')
 if second!=0:
-    print(second,"초")
+    print(f"{second}초")

@@ -1,0 +1,23 @@
+문제
+
+
+카지노에서 자주 플레이되는 블랙잭의 규칙은 카드의 합이 21이 넘지 않는 한도 내에서, 카드의 합을 가장 크게 만드는 게임이죠.
+
+이와 유사하게, 코드메이트 버전의 블랙잭은 N개의 카드중 세장의 카드를 뽑아 X를 넘지 않으면서 X와 가장 가까운 수의 카드조합을 골라내는 규칙으로 진행됩니다.
+
+첫째 줄에는 카드의 개수 N과 목표 값 X가 주어지며, 두번째 줄에는 카드에 쓰여있는 수가 입력으로 주어질 때 
+
+X에 가장 가까우면서 X를 넘지 않는 카드 세장의 합을 구해서 출력하세요.
+
+
+n,x=map(int,input().split())
+n_list=list(map(int,input().split()))
+result=0
+for i in range(n):
+    for j in range(i+1,n):
+        for k in range(j+1,n):
+            sum=n_list[i]+n_list[j]+n_list[k]
+            if sum<=x:
+                result=max(result,sum)
+
+print(result)

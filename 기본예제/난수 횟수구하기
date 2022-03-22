@@ -1,0 +1,36 @@
+#문제
+-30이상의 정수를 입력받아서
+-0부터 입력 받은 숫자까지의 난수를 발생 시켜
+-입력 받은 숫자가 1000번 발생할 때까지 반복하여
+-각 숫자 별로 발생된 횟수와 전체 시도한 횟수를 출력하는 프로그램
+
+
+
+
+import random
+
+n=int(input("30이상의 원하는 정수를 입력하세요:"))
+r_list=[]
+a=0
+count=0
+sum=0
+
+if n>=30:
+    while(a!=1000):
+        r = random.randint(0, n + 1)
+        if r==n:
+            a+=1
+        r_list.append(r)
+        sum+=1
+
+
+    for i in range(n+1):
+        for j in r_list:
+           if i == j:
+               count += 1
+
+        print(f"{i} 이 발생한 횟수는 {count}번입니다")
+        count=0
+    print(f"0부터 입력한 숫자 {n} 이 1000번 발생할때까지의 총 반복횟수는 {sum} 번 입니다")
+else:
+    print("30이상의 정수를 입력하세요.")

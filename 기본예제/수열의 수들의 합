@@ -1,0 +1,40 @@
+#문제
+
+
+N개의 수로 된 수열 A[1], A[2], …, A[N] 이 있습니다. 
+
+이 수열의 i번째 수부터 j번째 수까지의 합 A[i] + A[i+1] + … + A[j-1] + A[j]가 M이 되는 경우의 수를 출력 해 보세요.
+
+첫째 줄에 N과 M이 주어진다. 다음줄에는 수열 A가 공백으로 분리되어 주어진다.
+
+n,m=map(int,input().split())
+count=0
+n_list=list(map(int,input().split()))
+
+for i in n_list:
+    sum=0
+    for j in n_list:
+        sum+=j
+        if sum==m:
+            count += 1
+print(count)
+
+
+
+
+****range사용*****
+
+n,m=map(int,input().split())
+count=0
+s=0
+sum=0
+n_list=list(map(int,input().split()))
+
+for i in range(n):
+    for j in range(i+1,n):
+        sum+=n_list[j]
+        if n_list[i]+sum==m:
+            count+=1
+            break
+
+print(count)

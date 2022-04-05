@@ -1,0 +1,35 @@
+#파이썬 함수를 이용한 리스트 출력,삽입,삭제,수정 기본 활용
+
+
+friend=[]
+menu=0
+while menu!=9:
+    print("----------------\n"
+          "1. 친구 리스트 출력 \n"
+          "2. 친구추가\n"
+          "3. 친구삭제\n"
+          "4. 이름변경\n"
+          "9. 종료")
+    menu=int(input("메뉴를 선택하시오:"))
+    if menu==1:
+        print(friend)
+    elif menu==2:
+        add_name=input("추가하고 싶은 이름 입력:")
+        friend.append(add_name)
+    elif menu==3:
+        del_name = input("삭제하고 싶은 이름 입력:")
+        if del_name in friend:
+            friend.remove(del_name)
+        else:
+            print("없는 이름")
+    elif menu==4:
+        old_name=input("변경 전 이름 입력:")
+        if old_name in friend:
+            index=friend.index(old_name)
+            new_name=input("변경 후 이름 입력:")
+            friend[index]=new_name
+        else:
+            print("없는 이름")
+
+
+

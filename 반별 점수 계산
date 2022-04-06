@@ -1,0 +1,38 @@
+- list를 생성하여 한 학급당 40명인 3학급의 성적을 발생시켜 저장
+(난수 발생 메커니즘 및 2차원 list이용)
+- 각 학급별 최고점수와 최저점수 및 평균 출력
+- 전체 학급의 최고점수와 최저점수 및 전체 평균 점수 출력
+
+import random
+
+s_class=[] #반별로 모든 학생의 점수를 저장할 리스트 선언
+a_class=[] #모든 반 전원의 점수를 저장할 리스트 선언
+a_sum=0 #모든 반 전원의 점수 합 변수 초기화
+
+for i in range(1,4): #1반부터 3반까지 반복
+    score = [] #반별로 점수를 저장하기 위한 리스트 선언 및 초기화
+    sum=0   #반별 점수 합 변수 초기화
+    s_class.append(score)   #반별 점수가 담긴 리스트를 다른 리스트로 저장
+    for j in range(40): #40명이므로 40번 반복해서 난수생성 후 score리스트에 저장
+        score.append(random.randint(0,100))
+    for k in score: #반별 학생들의 점수 평균 구하기
+        sum+=k
+        average=sum/30
+    print("*************************************\n"
+          f"{i}반 평균은 {average}\n"
+          f"최고점은 {max(score)}\n"
+          f"최저점은 {min(score)}\n"
+          "*************************************")
+
+for i in s_class:   #반별로 저장돼있는 전체 학생의 리스트에서 점수 꺼내기
+    for j in i:
+        a_sum+=j
+        a_average=a_sum/90  #전체 점수 평균
+        a_class.append(j)   #a_class에 전체 학생의 점수 저장
+
+print("*************************************\n"
+        f"전체평균은 {a_average}\n"
+        f"전체최고점은 {max(a_class)}\n"
+        f"전체최저점은 {min(a_class)}\n"
+       "*************************************")
+print(s_class)

@@ -1,5 +1,15 @@
+#경고창
+
 from tkinter import*
 window=Tk()
 label=Label(window,text="Hello World")
 label.pack()
+window.mainloop()
+
+#버튼
+
+from tkinter import*
+window=Tk()
+b1=Button(window,text="Hello World")
+b1.pack() #pack이 위치,배치시키는 역할
 window.mainloop()

@@ -59,3 +59,21 @@ button=Button(window,text="tkinter로 버튼을 쉽게 만들 수 있습니다."
 button.pack()
 
 window.mainloop()
+
+#클래스로 프레임 감싸기
+from tkinter import*
+
+class App:
+    def __init__(self):
+        window=Tk()
+        helloB=Button(window,text="Hello",command=self.hello,fg="red")
+        helloB.pack(side=LEFT)
+        quitB=Button(window,text="Quit",command=self.quit)
+        quitB.pack(side=LEFT)
+        window.mainloop()
+
+    def hello(self):
+        print("Hello버튼이 클릭되었음!")
+    def quit(self):
+        print("Quit 버튼이 클릭되었음!")
+App()

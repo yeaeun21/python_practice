@@ -25,3 +25,12 @@ b1=Button(window,text="클릭",command=callback)
 b1.pack(side=LEFT) #pack이 위치,배치시키는 역할
 window.mainloop()
 
+#버튼 배치
+from tkinter import*
+
+window=Tk()
+b1=Button(window,text="첫번째 버튼")
+b2=Button(window,text="두번째 버튼")
+b1.pack(side=LEFT) #b1.pack()
+b2.pack(side=LEFT) #b2.pack() 일 경우 수직으로 배치
+window.mainloop()

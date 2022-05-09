@@ -13,3 +13,15 @@ window=Tk()
 b1=Button(window,text="Hello World")
 b1.pack() #pack이 위치,배치시키는 역할
 window.mainloop()
+
+#버튼동작
+
+from tkinter import*
+
+def callback():
+    b1["text"]="버튼이 클릭됨"
+window=Tk()
+b1=Button(window,text="클릭",command=callback)
+b1.pack(side=LEFT) #pack이 위치,배치시키는 역할
+window.mainloop()
+

@@ -77,3 +77,21 @@ class App:
     def quit(self):
         print("Quit 버튼이 클릭되었음!")
 App()
+
+#수식 계산기
+from tkinter import*
+from math import*
+window=Tk()
+
+def calculate(event):
+    label.configure(text="결과라능"+str(eval(e.get())))
+
+Label(window,text="파이썬 수식 입력:").pack()
+e=Entry(window)
+e.bind("<Return>",calculate)
+e.pack()
+
+label=Label(window,text="결과:")
+label.pack()
+
+window.mainloop()
